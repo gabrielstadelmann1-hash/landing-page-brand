@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GRIDLOCK® – Heavyweight streetwear. New York City.</title>
+<meta name="description" content="GRIDLOCK Drop 01: the 450gsm heavyweight hoodie, cut and sewn in New York City.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e0e0e;--yel:#ffd21f;--con:#d9d7d1;--pap:#efede8;--mu:#5b5b57;--d:"Anton",Impact,"Arial Narrow",sans-serif;--m:"Space Mono",ui-monospace,monospace;--s:"Inter Tight",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--s);background:var(--con);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--d);font-weight:400;text-transform:uppercase;line-height:.92}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.m{font-family:var(--m);font-size:.74rem;letter-spacing:.05em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.6rem;background:var(--ink);color:var(--pap);font-family:var(--m);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--yel);transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--yel);background:var(--yel);color:var(--ink)}
+.btn.w{width:100%}
+.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.11;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50}
+.tb{background:var(--ink);color:var(--yel);height:30px;overflow:hidden;display:flex;align-items:center}
+.trk{display:flex;gap:2.5rem;width:max-content;white-space:nowrap;animation:mq 30s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.nr{display:flex;justify-content:space-between;align-items:center;padding:.8rem 5vw;background:rgba(217,215,209,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:2px solid var(--ink)}
+.logo{font-family:var(--d);font-size:1.7rem;letter-spacing:.02em;line-height:1}
+.logo sup{font-size:.6rem;vertical-align:top;margin-left:2px}
+.nr ul{display:flex;gap:2rem;list-style:none}
+.nr ul a:hover{text-decoration:underline;text-underline-offset:4px}
+.cart{padding:.5rem 1rem;border:2px solid var(--ink);border-radius:99px;transition:background .2s}.cart:hover{background:var(--yel)}
+
+/* fixed layers */
+.wm{position:fixed;left:50%;top:53%;z-index:1;font-family:var(--d);font-size:29vw;line-height:.8;letter-spacing:-.01em;color:transparent;-webkit-text-stroke:2px rgba(14,14,14,.2);transform:translate(-50%,calc(-50% + var(--wy,0px)));opacity:var(--wo,1);pointer-events:none;user-select:none;white-space:nowrap;animation:wi 1.6s cubic-bezier(.2,.7,.1,1) both}
+@keyframes wi{from{opacity:0;transform:translate(-50%,calc(-50% + 50px))}to{opacity:var(--wo,1);transform:translate(-50%,calc(-50% + var(--wy,0px)))}}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:2;display:block;opacity:0}
+#fb{position:fixed;left:50%;top:52%;width:min(70vw,420px);transform:translate(-50%,-50%);z-index:2;display:none;filter:drop-shadow(0 30px 30px rgba(0,0,0,.35))}
+main{position:relative;z-index:10}
+
+/* panels */
+.panel{min-height:118vh;display:flex;align-items:center;padding:0 5vw}
+.panel.r{justify-content:flex-end}
+.copy{max-width:min(31rem,42vw)}
+h2{font-size:clamp(2.8rem,6.4vw,6.2rem);margin:.7rem 0 1.3rem}
+.copy p{color:#34342f;font-size:1.08rem}
+.spec{margin-top:1.8rem;border-top:2px solid var(--ink)}
+.spec div{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:2px solid var(--ink)}
+.spec dd{font-weight:700;text-align:right}
+.hero{min-height:100svh;align-items:flex-end;justify-content:space-between;padding-bottom:7vh;gap:2rem}
+.hero .copy{max-width:min(24rem,36vw)}
+.hero .copy>*{animation:up 1s cubic-bezier(.2,.7,.1,1) both}
+.hero .copy p{font-size:1.25rem;font-weight:500;line-height:1.3;color:var(--ink);margin:.8rem 0 1.6rem;animation-delay:.6s}.hero .copy .m{animation-delay:.45s}.hero .copy .btn{animation-delay:.8s}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hr{text-align:right;animation:up 1s ease 1s both}
+.swr{display:flex;gap:.55rem;justify-content:flex-end;margin:.6rem 0 1rem}
+.sw{width:30px;height:30px;border-radius:50%;background:var(--c);border:2px solid var(--ink);transition:transform .2s}
+.sw:hover{transform:scale(1.12)}.sw[aria-checked="true"]{box-shadow:0 0 0 3px var(--con),0 0 0 5px var(--ink)}
+
+/* shop card */
+.card{background:var(--pap);border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:1.7rem;max-width:min(27rem,44vw);width:100%}
+.card h2{font-size:clamp(2.2rem,3.6vw,3.4rem);margin:.5rem 0 .3rem}
+.pr{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:1rem;margin-bottom:1rem}
+.pr b{font-family:var(--d);font-weight:400;font-size:2.3rem}
+.card .swr{justify-content:flex-start;margin:.5rem 0 1.2rem}
+.szs{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.5rem 0 1.4rem}
+.sz{padding:.7rem 0;border:2px solid var(--ink);font-family:var(--m);font-weight:700;transition:background .15s}
+.sz:hover{background:var(--yel)}.sz[aria-pressed="true"]{background:var(--ink);color:var(--pap)}
+.card small{display:block;margin-top:1rem;color:var(--mu);font-size:.82rem}
+
+/* below the 3D */
+.after{background:var(--pap);position:relative;z-index:12}
+.mq2{background:var(--yel);border-block:2px solid var(--ink);overflow:hidden;padding:1rem 0}
+.mq2 .trk{font-family:var(--d);font-size:clamp(3rem,8vw,7rem);gap:3rem;animation-duration:36s;text-transform:uppercase;line-height:1}
+.mq2 span:nth-child(even){color:transparent;-webkit-text-stroke:2px var(--ink)}
+.look{padding:110px 5vw 60px}
+.lh{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2.5rem}.lh h2{margin:0}
+.lg{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(150px,24vh);gap:14px}
+.f{position:relative;overflow:hidden;border:2px solid var(--ink);background:linear-gradient(135deg,#3a3a37,#111)}
+.f img{filter:grayscale(1) contrast(1.1);transition:filter .6s,transform 1s}.f:hover img{filter:none;transform:scale(1.05)}
+.f figcaption{position:absolute;left:10px;bottom:10px;background:var(--yel);padding:.25rem .6rem;color:var(--ink)}
+.f1{grid-column:span 5;grid-row:span 3}.f2{grid-column:span 4;grid-row:span 2}.f3{grid-column:span 3;grid-row:span 2}.f4{grid-column:span 7;grid-row:span 1}
+.story{background:var(--yel);border-block:2px solid var(--ink);padding:110px 5vw}
+.story h2{font-size:clamp(3rem,9vw,9rem);margin:0 0 3rem;max-width:14ch}
+.fx{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.fx div{border-top:3px solid var(--ink);padding-top:1rem}.fx b{display:block;font-family:var(--d);font-weight:400;font-size:2.6rem;line-height:1;margin-bottom:.4rem}
+.join{padding:120px 5vw;text-align:center}
+.join h2{font-size:clamp(3.4rem,10vw,10rem);margin:0 0 1rem}
+.join p{max-width:28rem;margin:0 auto 2rem;color:var(--mu)}
+.form{display:flex;max-width:520px;margin:0 auto;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:#fff}
+.form input{flex:1;min-width:0;border:0;padding:1rem 1.2rem;font:inherit;background:none;outline:0}
+.form .btn{box-shadow:none;border-width:0 0 0 2px}
+footer{background:var(--ink);color:var(--pap);padding:70px 5vw 40px;overflow:hidden}
+.big{font-family:var(--d);font-size:27vw;line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(239,237,232,.45);white-space:nowrap;margin:2rem 0 1.5rem}
+footer .m{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:#a9a8a1}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;z-index:99;background:var(--ink);color:var(--yel);padding:.9rem 1.3rem;font-family:var(--m);font-size:.8rem;border:2px solid var(--yel);transition:.35s;pointer-events:none;max-width:92vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+#shop,#hero{touch-action:pan-y}
+
+@media(max-width:860px){
+  .nr ul{display:none}
+  .panel{align-items:flex-end;padding-bottom:7vh;min-height:118vh}.panel.r{justify-content:flex-start}
+  .copy,.hero .copy{max-width:none;width:100%;background:rgba(239,237,232,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:2px solid var(--ink);padding:1.2rem}
+  .hero{flex-direction:column;align-items:stretch;justify-content:flex-end}.hr{text-align:left}.hr .swr{justify-content:flex-start}
+  h2{font-size:2.8rem}.card{max-width:none}.card h2{font-size:2.3rem}
+  .wm{font-size:40vw;top:30%}
+  .lg{grid-template-columns:1fr 1fr;grid-auto-rows:200px}.f1,.f2,.f3,.f4{grid-column:span 1;grid-row:span 1}.f1{grid-column:span 2;grid-row:span 2}.f4{grid-column:span 2}
+  .fx{grid-template-columns:1fr}.lh{flex-direction:column;align-items:start}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition-duration:.01ms!important}.wm{opacity:var(--wo,1)}.hero .copy>*,.hr{opacity:1}}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="tb m" aria-hidden="true"><div class="trk" id="trk"><span>Free shipping over $150</span><span>✕</span><span>Drop 01 is live</span><span>✕</span><span>Cut &amp; sewn in New York City</span><span>✕</span><span>500 pieces. No restock.</span><span>✕</span></div></div>
+  <div class="nr">
+    <a class="logo" href="#top">GRIDLOCK<sup>®</sup></a>
+    <ul class="m"><li><a href="#shop">Shop</a></li><li><a href="#lookbook">Lookbook</a></li><li><a href="#story">Story</a></li></ul>
+    <button class="cart m" id="cart" aria-label="Cart">Cart (<span id="cc">0</span>)</button>
+  </div>
+</header>
+
+<div class="wm" id="wm" aria-hidden="true">GRIDLOCK</div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<img id="fb" alt="GRIDLOCK heavyweight hoodie">
+
+<main>
+  <section class="panel hero" id="hero">
+    <div class="copy" id="top">
+      <span class="m">(Drop 01) FW26 · 500 pieces</span>
+      <p>Heavyweight hoodies for people who walk everywhere.</p>
+      <a class="btn" href="#shop">Shop Drop 01 →</a>
+    </div>
+    <div class="hr">
+      <div class="m"><span class="cn">Asphalt</span>, pick a line</div>
+      <div class="swr" role="radiogroup" aria-label="Colorway"></div>
+      <div class="m" style="opacity:.6">Drag to rotate</div>
+    </div>
+  </section>
+
+  <section class="panel" id="heavy">
+    <div class="copy">
+      <span class="m">(01) Fabric</span>
+      <h2>450 GSM.<br>That’s not a typo.</h2>
+      <p>Brushed-back French terry, garment-dyed and pre-washed so it fits like it’s been yours for years. Boxy cut, dropped shoulders, double-layer hood.</p>
+      <dl class="spec m">
+        <div><dt>Fabric</dt><dd>100% organic cotton</dd></div>
+        <div><dt>Weight</dt><dd>450 gsm</dd></div>
+        <div><dt>Fit</dt><dd>Boxy, oversized</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="panel r" id="back">
+    <div class="copy">
+      <span class="m">(02) Graphic</span>
+      <h2>The back has a story.</h2>
+      <p>“Midnight Express” is for the last train home. Six-pass screen print that cracks beautifully in the wash, numbered out of 500.</p>
+      <dl class="spec m">
+        <div><dt>Print</dt><dd>6-pass screen print</dd></div>
+        <div><dt>Run</dt><dd>500 pieces, numbered</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="panel" id="shop">
+    <div class="card">
+      <span class="m">(GL-01) Drop 01</span>
+      <h2>Heavyweight Hoodie</h2>
+      <div class="pr"><span class="m">Colorway: <b class="cn" style="font:inherit;font-weight:700">Asphalt</b></span><b>$148</b></div>
+      <div class="m">Colorway</div>
+      <div class="swr" role="radiogroup" aria-label="Colorway"></div>
+      <div class="m">Size</div>
+      <div class="szs" role="group" aria-label="Size"><button class="sz" data-s="S" aria-pressed="false">S</button><button class="sz" data-s="M" aria-pressed="true">M</button><button class="sz" data-s="L" aria-pressed="false">L</button><button class="sz" data-s="XL" aria-pressed="false">XL</button></div>
+      <button class="btn w" id="add">Add to cart · $148</button>
+      <small>Free shipping over $150. 30-day returns. Ships from Brooklyn.</small>
+    </div>
+  </section>
+
+  <div class="after">
+    <div class="mq2" aria-hidden="true"><div class="trk" id="trk2"><span>Walk everywhere</span><span>Walk everywhere</span><span>Walk everywhere</span><span>Walk everywhere</span></div></div>
+
+    <section class="look" id="lookbook">
+      <div class="lh"><h2>On the block.</h2><p class="m" style="max-width:20rem;color:var(--mu)">Shot between the 6 train and the bodega. No studio, no retouching.</p></div>
+      <div class="lg">
+        <figure class="f f1"><img loading="lazy" src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1000&q=80" alt="Man wearing a hoodie on the street" onerror="this.remove()"><figcaption class="m">Look 01</figcaption></figure>
+        <figure class="f f2"><img loading="lazy" src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1000&q=80" alt="Street style portrait" onerror="this.remove()"><figcaption class="m">Look 02</figcaption></figure>
+        <figure class="f f3"><img loading="lazy" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="New York City street" onerror="this.remove()"><figcaption class="m">Midtown</figcaption></figure>
+        <figure class="f f4"><img loading="lazy" src="https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=1400&q=80" alt="Manhattan skyline at dusk" onerror="this.remove()"><figcaption class="m">Manhattan, 6:42 pm</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <span class="m">(03) Origin</span>
+      <h2>Cut &amp; sewn in the Garment District. Actually.</h2>
+      <div class="fx">
+        <div><b>500</b>pieces per drop, numbered by hand. When it’s gone, it’s gone.</div>
+        <div><b>450</b>grams per square meter of organic cotton, dyed and washed in small batches.</div>
+        <div><b>0</b>restocks. The next drop is a different piece, not a reprint.</div>
+      </div>
+    </section>
+
+    <section class="join">
+      <h2>Join the block.</h2>
+      <p>First access to every drop, 24 hours before everyone else. No spam, just the next date.</p>
+      <form class="form" id="form"><input type="email" required placeholder="your@email.com" aria-label="Email"><button class="btn" type="submit">Sign up</button></form>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="big" aria-hidden="true">GRIDLOCK</div>
+  <div class="m"><span>© 2026 GRIDLOCK® New York City</span><span>Demo page, fictional brand</span><a href="#top">Back to top ↑</a></div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var $=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+$('#trk').innerHTML+=$('#trk').innerHTML;$('#trk2').innerHTML+=$('#trk2').innerHTML;
+
+/* ——— UI : toast, panier, colorways, tailles ——— */
+var toast=$('#toast'),tt,cn=0;
+function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},3200)}
+$('#form').addEventListener('submit',function(e){e.preventDefault();e.target.reset();say('Welcome to the block. (Demo: nothing was saved.)')});
+$('#cart').addEventListener('click',function(){say(cn?cn+' item(s) in your cart. (Demo)':'Your cart is empty.')});
+var CWS={
+ asphalt:{n:'Asphalt',base:'#17181b',ink:'#f1efe8',acc:'#ffd21f',bl:'#0e0e0e'},
+ concrete:{n:'Concrete',base:'#b9b7b0',ink:'#101010',acc:'#ffd21f',bl:'#0e0e0e'},
+ taxi:{n:'Taxi',base:'#ffd21f',ink:'#101010',acc:'#101010',bl:'#ffd21f'},
+ green:{n:'Line 4',base:'#0f6a3d',ink:'#f1efe8',acc:'#ffd21f',bl:'#0e0e0e'},
+ blue:{n:'Line A',base:'#1b3f9e',ink:'#f1efe8',acc:'#ffd21f',bl:'#0e0e0e'}};
+var ck='asphalt',sz='M',onColor=function(){};
+$$('.swr').forEach(function(box){Object.keys(CWS).forEach(function(k){var b=document.createElement('button');b.className='sw';b.setAttribute('role','radio');b.dataset.c=k;b.setAttribute('aria-label',CWS[k].n);b.setAttribute('aria-checked',k===ck);b.style.setProperty('--c',CWS[k].base);b.addEventListener('click',function(){setColor(k)});box.appendChild(b)})});
+function setColor(k){ck=k;$$('.sw').forEach(function(b){b.setAttribute('aria-checked',b.dataset.c===k)});$$('.cn').forEach(function(n){n.textContent=CWS[k].n});onColor(k)}
+$$('.sz').forEach(function(b){b.addEventListener('click',function(){sz=b.dataset.s;$$('.sz').forEach(function(x){x.setAttribute('aria-pressed',x===b)})})});
+$('#add').addEventListener('click',function(){cn++;$('#cc').textContent=cn;say('Added: GL-01 Hoodie, '+CWS[ck].n+' / '+sz+'. (Demo)')});
+
+/* ——— textures du vêtement ——— */
+var CW=512,CH=600,S=2;
+function cv(w,h){var c=document.createElement('canvas');c.width=w;c.height=h;return c}
+function silPath(g){
+ g.beginPath();g.moveTo(190,100);g.bezierCurveTo(166,46,214,10,256,10);g.bezierCurveTo(298,10,346,46,322,100);
+ g.lineTo(398,122);g.lineTo(498,520);g.quadraticCurveTo(504,556,470,560);g.lineTo(428,566);g.quadraticCurveTo(416,566,414,552);
+ g.lineTo(380,300);g.lineTo(384,572);g.lineTo(128,572);g.lineTo(132,300);g.lineTo(98,552);g.quadraticCurveTo(96,566,84,566);
+ g.lineTo(42,560);g.quadraticCurveTo(8,556,14,520);g.lineTo(114,122);g.closePath()}
+var silC=cv(CW,CH),sg=silC.getContext('2d');sg.fillStyle='#000';sg.fillRect(0,0,CW,CH);sg.fillStyle='#fff';silPath(sg);sg.fill();
+
+function shade(h,f){var n=parseInt(h.slice(1),16);return 'rgb('+[n>>16&255,n>>8&255,n&255].map(function(v){return Math.max(0,Math.min(255,v*f|0))})+')'}
+function fit(g,t,w,font){var s=100;g.font=s+'px '+font;s=s*w/g.measureText(t).width;g.font=s+'px '+font;return s}
+
+function paint(c,which,C){
+ var g=c.getContext('2d'),i,x;g.setTransform(S,0,0,S,0,0);
+ g.fillStyle=C.base;g.fillRect(0,0,CW,CH);
+ for(i=0;i<26000;i++){g.fillStyle=Math.random()<.5?'rgba(255,255,255,.06)':'rgba(0,0,0,.07)';g.fillRect(Math.random()*CW,Math.random()*CH,1,1)}
+ g.lineCap='round';
+ /* côtes : bas et poignets */
+ g.fillStyle=shade(C.base,.88);g.fillRect(126,536,262,40);
+ g.strokeStyle='rgba(0,0,0,.2)';g.lineWidth=1.2;g.beginPath();for(x=128;x<388;x+=5){g.moveTo(x,536);g.lineTo(x,576)}g.stroke();
+ g.strokeStyle='rgba(0,0,0,.3)';g.lineWidth=1.6;g.beginPath();g.moveTo(126,536);g.lineTo(388,536);g.stroke();
+ [0,1].forEach(function(m){g.save();if(m){g.translate(CW,0);g.scale(-1,1)}
+  g.fillStyle=shade(C.base,.88);g.beginPath();g.moveTo(24,480);g.lineTo(108,480);g.lineTo(98,552);g.lineTo(84,566);g.lineTo(42,560);g.lineTo(14,520);g.closePath();g.fill();
+  g.strokeStyle='rgba(0,0,0,.2)';g.lineWidth=1.2;g.beginPath();for(i=0;i<9;i++){g.moveTo(24+i*10,482);g.lineTo(18+i*10,566)}g.stroke();
+  g.strokeStyle='rgba(0,0,0,.3)';g.lineWidth=1.6;g.beginPath();g.moveTo(24,480);g.lineTo(108,480);g.stroke();
+  g.beginPath();g.moveTo(150,118);g.quadraticCurveTo(128,200,132,300);g.stroke();g.restore()});
+ g.strokeStyle='rgba(0,0,0,.28)';g.lineWidth=1.6;
+ if(which==='f'){
+  g.fillStyle=shade(C.base,.3);g.beginPath();g.ellipse(256,66,54,50,0,0,7);g.fill();
+  g.strokeStyle='rgba(0,0,0,.4)';g.lineWidth=3;g.stroke();g.strokeStyle='rgba(255,255,255,.14)';g.lineWidth=1;g.setLineDash([4,4]);g.beginPath();g.ellipse(256,66,61,57,0,0,7);g.stroke();g.setLineDash([]);
+  g.strokeStyle=C.ink;g.globalAlpha=.85;g.lineWidth=4;g.beginPath();g.moveTo(232,114);g.lineTo(229,232);g.moveTo(280,114);g.lineTo(283,246);g.stroke();
+  g.fillStyle=C.ink;g.fillRect(226,232,6,16);g.fillRect(280,246,6,16);g.globalAlpha=1;
+  g.strokeStyle='rgba(0,0,0,.32)';g.lineWidth=2;g.beginPath();g.moveTo(166,372);g.lineTo(346,372);g.lineTo(380,505);g.lineTo(132,505);g.closePath();g.stroke();
+  g.beginPath();g.moveTo(166,372);g.lineTo(150,422);g.moveTo(346,372);g.lineTo(362,422);g.stroke();
+  g.setLineDash([5,4]);g.lineWidth=1.2;g.beginPath();g.moveTo(160,380);g.lineTo(352,380);g.stroke();g.setLineDash([]);
+  g.fillStyle=C.ink;g.textAlign='center';fit(g,'GRIDLOCK',212,'Anton,Impact,sans-serif');g.fillText('GRIDLOCK',256,300);
+  g.font='11px "Space Mono",monospace';g.globalAlpha=.85;g.fillText('NEW YORK CITY · EST. 2019',256,326);g.globalAlpha=1;
+  g.fillStyle=C.acc;g.beginPath();g.arc(184,214,16,0,7);g.fill();g.fillStyle=C.bl;g.font='20px Anton,Impact,sans-serif';g.fillText('N',184,222);
+ }else{
+  g.strokeStyle='rgba(0,0,0,.3)';g.lineWidth=2;g.fillStyle=shade(C.base,.93);g.beginPath();g.ellipse(256,92,68,56,0,0,7);g.fill();g.stroke();
+  g.beginPath();g.moveTo(256,38);g.lineTo(256,148);g.stroke();
+  g.fillStyle=C.ink;g.textAlign='center';g.font='11px "Space Mono",monospace';g.globalAlpha=.85;g.fillText('GRIDLOCK® NEW YORK',256,186);g.globalAlpha=1;
+  fit(g,'MIDNIGHT',226,'Anton,Impact,sans-serif');g.fillText('MIDNIGHT',256,282);fit(g,'EXPRESS',226,'Anton,Impact,sans-serif');g.fillText('EXPRESS',256,352);
+  g.fillStyle=C.acc;g.beginPath();g.arc(256,430,44,0,7);g.fill();g.strokeStyle=C.ink;g.lineWidth=3;g.stroke();
+  g.fillStyle=C.bl;g.font='62px Anton,Impact,sans-serif';g.fillText('N',256,452);
+  g.fillStyle=C.ink;g.font='10px "Space Mono",monospace';g.globalAlpha=.8;g.fillText('DROP 01 — 450 GSM — NO. ___ / 500',256,518);g.globalAlpha=1}
+}
+var BUMP={base:'#808080',ink:'#d8d8d8',acc:'#d8d8d8',bl:'#808080'};
+var cF=cv(CW*S,CH*S),cB=cv(CW*S,CH*S),bF=cv(CW*S,CH*S),bB=cv(CW*S,CH*S);
+function repaint(k){var C=CWS[k];paint(cF,'f',C);paint(cB,'b',C);paint(bF,'f',BUMP);paint(bB,'b',BUMP)}
+
+function flat(){var t=cv(CW*S,CH*S),g=t.getContext('2d');g.drawImage(cF,0,0);g.globalCompositeOperation='destination-in';g.setTransform(S,0,0,S,0,0);g.fillStyle='#000';silPath(g);g.fill();return t.toDataURL()}
+
+function boot(){
+ repaint(ck);
+ var THREE=window.THREE,renderer=null,canvas=$('#gl');
+ if(THREE){try{renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true,powerPreference:'high-performance'})}catch(e){}}
+ if(!renderer){var fb=$('#fb');fb.src=flat();fb.style.display='block';onColor=function(k){repaint(k);fb.src=flat()};return}
+
+ renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setClearColor(0,0);
+ renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;
+ var scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(30,1,.1,100);
+ scene.add(new THREE.HemisphereLight(0xffffff,0x6b6a66,.95));
+ var key=new THREE.DirectionalLight(0xfff4e0,1.15);key.position.set(3,4,6);scene.add(key);
+ var rim=new THREE.DirectionalLight(0xdfe8ff,.8);rim.position.set(-4,2,-5);scene.add(rim);
+ var fill=new THREE.DirectionalLight(0xffffff,.45);fill.position.set(-4,-1,5);scene.add(fill);
+
+ /* champ de hauteur : silhouette floutée -> forme gonflée */
+ var d=sg.getImageData(0,0,CW,CH).data,a=new Float32Array(CW*CH),i,p;
+ for(i=0;i<a.length;i++)a[i]=d[i*4]/255;
+ function box(a,w,h,r){var t=new Float32Array(a.length),o=new Float32Array(a.length),n=2*r+1,x,y,s,cl=function(v,m){return v<0?0:v>m?m:v};
+  for(y=0;y<h;y++){s=0;for(x=-r;x<=r;x++)s+=a[y*w+cl(x,w-1)];for(x=0;x<w;x++){t[y*w+x]=s/n;s+=a[y*w+cl(x+r+1,w-1)]-a[y*w+cl(x-r,w-1)]}}
+  for(x=0;x<w;x++){s=0;for(y=-r;y<=r;y++)s+=t[cl(y,h-1)*w+x];for(y=0;y<h;y++){o[y*w+x]=s/n;s+=t[cl(y+r+1,h-1)*w+x]-t[cl(y-r,h-1)*w+x]}}
+  return o}
+ for(i=0;i<3;i++)a=box(a,CW,CH,11);
+
+ var GW=3.2,GH=GW*CH/CW,T=.4,geo=new THREE.PlaneGeometry(GW,GH,150,176),pos=geo.attributes.position,uv=geo.attributes.uv;
+ for(p=0;p<pos.count;p++){
+  var u=uv.getX(p),v=uv.getY(p),px=Math.max(0,Math.min(CW-1,Math.round(u*(CW-1)))),py=Math.max(0,Math.min(CH-1,Math.round((1-v)*(CH-1))));
+  var hp=Math.max(0,Math.min(1,(a[py*CW+px]-.5)/.42)),x=pos.getX(p),y=pos.getY(p),m=Math.min(1,hp*3);
+  var wr=(Math.sin(y*7+x*1.5)*.018+Math.sin(x*11-y*3)*.012+Math.sin(y*23+x*4)*.006+(Math.abs(x)>1&&y<-.2?Math.sin(y*34+x*3)*.02:0))*m;
+  pos.setZ(p,T*Math.pow(hp,.55)+wr)}
+ geo.computeVertexNormals();
+
+ var silT=new THREE.CanvasTexture(silC);
+ function tex(c,srgb){var t=new THREE.CanvasTexture(c);t.anisotropy=8;if(srgb)t.encoding=THREE.sRGBEncoding;return t}
+ var tF=tex(cF,1),tB=tex(cB,1),uF=tex(bF),uB=tex(bB);
+ function mat(m,b){return new THREE.MeshStandardMaterial({map:m,bumpMap:b,bumpScale:2.4,alphaMap:silT,alphaTest:.5,roughness:.94,metalness:0})}
+ var rig=new THREE.Group(),front=new THREE.Mesh(geo,mat(tF,uF)),back=new THREE.Mesh(geo,mat(tB,uB));
+ back.rotation.y=Math.PI;rig.add(front);rig.add(back);scene.add(rig);
+
+ var sh=cv(256,256),shg=sh.getContext('2d'),gr=shg.createRadialGradient(128,128,0,128,128,128);
+ gr.addColorStop(0,'rgba(0,0,0,.6)');gr.addColorStop(.5,'rgba(0,0,0,.2)');gr.addColorStop(1,'rgba(0,0,0,0)');shg.fillStyle=gr;shg.fillRect(0,0,256,256);
+ var shadow=new THREE.Mesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(sh),transparent:true,depthWrite:false,opacity:.4}));
+ shadow.rotation.x=-Math.PI/2;shadow.scale.set(4.6,4.6,1);scene.add(shadow);
+
+ var spinT=0,spin=0;
+ onColor=function(k){repaint(k);[tF,tB,uF,uB].forEach(function(t){t.needsUpdate=true});spinT+=Math.PI*2};
+
+ /* trajectoire par section */
+ var K=[{rx:.05,ry:.3,rz:0,px:0,py:.05,pz:-.5,sh:.45},{rx:.05,ry:-.55,rz:.02,px:2.4,py:0,pz:.2,sh:.35},
+  {rx:.03,ry:Math.PI-.35,rz:-.02,px:-2.4,py:0,pz:.2,sh:.35},{rx:.05,ry:.25,rz:0,px:2.5,py:0,pz:.1,sh:.4}];
+ var PR=['rx','ry','rz','px','py','pz','sh'],cur={};PR.forEach(function(n){cur[n]=K[0][n]});
+ var panels=$$('.panel'),ctr=[],shopEl=$('#shop'),wm=$('#wm');
+ function measure(){ctr=panels.map(function(e){return e.offsetTop+e.offsetHeight/2})}
+ function prog(){var mid=scrollY+innerHeight*.5;if(mid<=ctr[0])return 0;for(var j=0;j<ctr.length-1;j++)if(mid<ctr[j+1])return j+(mid-ctr[j])/(ctr[j+1]-ctr[j]);return ctr.length-1}
+ function sm(x){x=Math.max(0,Math.min(1,x));return x*x*(3-2*x)}
+ var W=1,H=1,D=10,mob=false;
+ function resize(){W=innerWidth;H=innerHeight;renderer.setSize(W,H,false);camera.aspect=W/H;mob=W/H<.9;D=mob?Math.max(10,6.9/camera.aspect):10;
+  camera.position.set(0,.4,D);camera.lookAt(0,0,0);camera.updateProjectionMatrix();measure()}
+ addEventListener('resize',resize);addEventListener('load',function(){measure();setTimeout(measure,600)});resize();
+
+ var mx=0,my=0,mxs=0,mys=0,drag=false,lx=0,vel=0,dy=0;
+ addEventListener('pointermove',function(e){mx=(e.clientX/W-.5)*2;my=(e.clientY/H-.5)*2});
+ ['#hero','#shop'].forEach(function(s){var el=$(s);
+  el.addEventListener('pointerdown',function(e){if(e.target.closest('button,a,input'))return;drag=true;lx=e.clientX;try{el.setPointerCapture(e.pointerId)}catch(_){}});
+  el.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-lx;lx=e.clientX;dy+=dx*.009;vel=dx*.009});
+  ['pointerup','pointercancel'].forEach(function(ev){el.addEventListener(ev,function(){drag=false})})});
+
+ var last=performance.now(),t0=last;
+ function frame(now){
+  requestAnimationFrame(frame);if(document.hidden)return;
+  var dt=Math.min(.05,(now-last)/1000);last=now;var time=(now-t0)/1000;
+  var pg=prog(),j=Math.min(K.length-2,Math.floor(pg)),f=Math.min(1,pg-j),e=sm((f-.25)/.5),A=K[j],B=K[j+1];
+  var halfH=D*Math.tan(.2618),up=mob?halfH*.42:0,k=RM?1:1-Math.pow(.001,dt);
+  PR.forEach(function(n){var tg=A[n]+(B[n]-A[n])*e;if(mob){if(n==='px')tg*=.15;if(n==='py')tg+=up;if(n==='pz')tg*=D/10}cur[n]+=(tg-cur[n])*k});
+  if(!drag){dy+=vel;vel*=.94;if(!(pg<.4||pg>2.6))dy*=.97;else dy*=.985}
+  spin+=(spinT-spin)*(RM?1:.06);mxs+=(mx-mxs)*.05;mys+=(my-mys)*.05;
+  var intro=RM?1:Math.min(1,time/2.2),ie=1-Math.pow(1-intro,3);
+  var idle=RM?0:Math.sin(time*.5)*.18,bob=RM?0:Math.sin(time*.9)*.05;
+  rig.position.set(cur.px,cur.py+bob,cur.pz);
+  rig.rotation.set(cur.rx-mys*.05,cur.ry+idle+dy+spin+mxs*.1+(1-ie)*-1.8,cur.rz);
+  rig.scale.setScalar(.9+.1*ie);
+  shadow.position.set(cur.px,-2.45+(mob?up:0),cur.pz);shadow.material.opacity=cur.sh*ie;
+  var fo=Math.max(0,Math.min(1,shopEl.getBoundingClientRect().bottom/(H*.7)));
+  canvas.style.opacity=(fo*ie).toFixed(3);
+  wm.style.setProperty('--wo',Math.max(0,1-scrollY/(H*.9)).toFixed(3));wm.style.setProperty('--wy',(scrollY*.22).toFixed(1)+'px');
+  if(fo>.01){camera.lookAt(0,0,0);renderer.render(scene,camera)}}
+ requestAnimationFrame(frame);
+}
+var started=false;function go(){if(started)return;started=true;boot()}
+var fl=[];try{fl=[document.fonts.load('80px Anton'),document.fonts.load('12px "Space Mono"')]}catch(e){}
+Promise.race([Promise.all(fl),new Promise(function(r){setTimeout(r,1800)})]).then(go,go);
+})();
+</script>
+</body>
+</html>
